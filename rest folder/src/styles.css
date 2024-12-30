@@ -1,0 +1,91 @@
+/* styles.css */
+
+/* General styles */
+body {
+    font-family: 'Open Sans', sans-serif; /* Use a modern font */
+    margin: 0;
+    padding: 0;
+    background-color: #e0dd17; /* Light gray background */
+    
+    background-size: cover; /* Cover the entire background */
+    background-attachment: fixed; /* Fix the background to the viewport */
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+    position: sticky; /* Keep header fixed on scroll */
+    top: 0;
+  }
+  
+  nav button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 0 10px;
+  }
+  
+  nav button:hover {
+    background-color: #555;
+  }
+  
+  #content {
+    padding: 50px;
+    max-width: 800px;
+    margin: 0 auto; /* Center content horizontally */
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  }
+  
+  /* Homepage styles */
+  #content h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  #content img {
+    max-width: 100%;
+    height: auto;
+    
+    border-radius: 5px; /* Add rounded corners to images */
+  }
+  
+  /* Menu Page styles */
+  #content h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+  }
+  
+  #content ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #content li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc; /* Add a border to each list item */
+    padding-bottom: 10px;
+  }
+  
+  #content li img {
+    margin-right: 15px;
+    max-width: 80px;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  /* About Page styles */
+  #content p {
+    font-size: 1.1em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
