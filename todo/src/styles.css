@@ -6,117 +6,148 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background-color: #f5f7fa;
+    background-color: #f9f9fb;
     color: #333;
 }
 
+/* Header */
 header {
-    background-color: #2ee0ec;
+    background-color: #1976d2;
     color: #fff;
     text-align: center;
     padding: 1rem 0;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Main Layout */
 main {
     display: flex;
     flex: 1;
 }
 
+/* Sidebar */
 aside {
     width: 250px;
-    background: linear-gradient(to bottom, #1976d2, #2196f3);
-    color: #fff;
-    padding: 1rem;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-}
-
-aside button {
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    color: #1976d2;
     background-color: #fff;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    font-weight: bold;
-    margin-bottom: 1rem;
+    padding: 1.5rem;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
 }
 
-aside button:hover {
-    background-color: #e0f7fa;
+aside h2 {
     color: #1976d2;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
+.projectAdd {
+    width: 100%;
+    background-color: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.projectAdd:hover {
+    background-color: #145a9e;
+}
+
+/* Project List */
 #projectList {
     margin-top: 1rem;
 }
 
+/* Project Folder */
 .project {
-    display: flex;
-    flex-direction: column; /* Arrange items vertically */
-    justify-content: space-between;
-    align-items: flex-start;
     background-color: #f0f0f0;
     padding: 15px;
-    margin: 5px 0;
-    border-radius: 5px;
+    margin: 10px 0;
+    border-radius: 8px;
     font-size: 1rem;
     color: #333;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
-    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    overflow: hidden; /* Prevent content overflow */
+    position: relative; /* Contain absolutely positioned elements */
 }
 
 .project:hover {
     background-color: #e0f7fa;
+    transform: scale(1.02);
 }
 
-.project .delete-btn {
-    background-color: #ff6f61;
-    color: #fff;
-    border: none;
+/* Project Name */
+.project-name {
+    font-weight: bold;
+    color: #1976d2;
+    white-space: nowrap; /* Prevent line wrapping */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Add ellipsis for overflow */
+    display: block; /* Ensure it's treated as a block element */
+}
+
+/* Buttons Container */
+.project-buttons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+    display: none; /* Hidden initially */
+    flex-wrap: wrap; /* Allow buttons to wrap if needed */
+}
+
+/* Button Styles */
+.project .edit-btn,
+.project .delete-btn,
+.project .add-todo-btn {
+    background-color: #fff;
+    color: #1976d2;
+    border: 1px solid #1976d2;
     border-radius: 5px;
-    padding: 10px 15px;
+    padding: 8px 12px;
     font-size: 0.9rem;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    align-self: flex-end; /* Align the button to the right */
-    margin-top: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.project .delete-btn:hover {
-    background-color: #e53935;
-    transform: scale(1.05);
+.project .edit-btn:hover,
+.project .delete-btn:hover,
+.project .add-todo-btn:hover {
+    background-color: #1976d2;
+    color: #fff;
 }
 
-.project .delete-btn:active {
+.project .edit-btn:active,
+.project .delete-btn:active,
+.project .add-todo-btn:active {
     transform: scale(0.95);
-    background-color: #d32f2f;
 }
 
+/* Content Area */
 .content {
     flex-grow: 1;
-    background: #ffffff;
+    background-color: #ffffff;
     padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     margin: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-
-.myProjects {
-    margin-top: 70px;
+.content h2 {
+    color: #1976d2;
+    font-size: 1.8rem;
+    font-weight: bold;
 }
