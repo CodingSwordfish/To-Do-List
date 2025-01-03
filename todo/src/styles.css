@@ -6,6 +6,7 @@
 }
 
 body {
+   
     font-family: 'Arial', sans-serif;
     display: flex;
     flex-direction: column;
@@ -13,6 +14,11 @@ body {
     background-color: #f9f9fb;
     color: #333;
 }
+
+
+
+
+
 
 /* Header */
 header {
@@ -45,6 +51,7 @@ aside h2 {
     margin-top: 1rem;
     font-size: 1.5rem;
     font-weight: bold;
+    margin-top: 60px;
 }
 
 .projectAdd {
