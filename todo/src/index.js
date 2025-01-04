@@ -42,3 +42,5 @@ window.onload = () => {
     projectAddButton.addEventListener('click', addProject);
     renderProjects(projectList);
 };
+
+
