@@ -1,4 +1,5 @@
 import { getProjects, saveProjects } from './storage.js';
+import { renderToDoForm } from './form.js';
 
 const MAX_NAME_LENGTH = 20; // Maximum display length for project names
 
@@ -36,14 +37,21 @@ export const renderProjects = (projectList) => {
         const addToDoButton = document.createElement('button');
         addToDoButton.className = 'add-todo-btn';
         addToDoButton.textContent = 'Add To-Do';
+        //add event listener to create form here if there is no form in the content div
+        addToDoButton.addEventListener('click', () => {
+            const contentDiv = document.querySelector('.content');
+            renderToDoForm(contentDiv);
+        });
 
         projectButtons.appendChild(editButton);
         projectButtons.appendChild(deleteButton);
         projectButtons.appendChild(addToDoButton);
 
-        projectName.addEventListener('click', () => {
+        projectDiv.addEventListener('click', () => {
             projectButtons.style.display =
                 projectButtons.style.display === 'none' ? 'flex' : 'none';
+
+                // import the function to display the saved cards here
         });
 
         projectDiv.appendChild(projectName);
