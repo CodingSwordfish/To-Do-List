@@ -1,5 +1,6 @@
-import { getProjects, saveProjects } from './storage.js';
+import { getProjects, saveProjects,saveToDos,getToDos } from './storage.js';
 import { renderToDoForm } from './form.js';
+
 
 const MAX_NAME_LENGTH = 20; // Maximum display length for project names
 
@@ -40,7 +41,7 @@ export const renderProjects = (projectList) => {
         //add event listener to create form here if there is no form in the content div
         addToDoButton.addEventListener('click', () => {
             const contentDiv = document.querySelector('.content');
-            renderToDoForm(contentDiv);
+            renderToDoForm(contentDiv,project);
         });
 
         projectButtons.appendChild(editButton);
@@ -62,8 +63,17 @@ export const renderProjects = (projectList) => {
 
 const deleteProject = (index) => {
     const projects = getProjects();
+    const folderName = projects[index];
+
+    // Remove the folder from projects
     projects.splice(index, 1);
     saveProjects(projects);
+
+    // Remove to-dos associated with the folder
+    const toDos = getToDos();
+    const updatedToDos = toDos.filter(toDo => toDo.folder !== folderName);
+    saveToDos(updatedToDos);
+
     renderProjects(document.getElementById('projectList'));
 };
 

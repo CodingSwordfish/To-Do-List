@@ -1,6 +1,7 @@
 import { saveToDos,getToDos } from './storage.js'; // Import the saveToDos function
+import { ToDo } from './todoClass.js';
 
-export const renderToDoForm = (contentDiv) => {
+export const renderToDoForm = (contentDiv,folderName) => {
     // Check if a form already exists in the content div
     if (contentDiv.querySelector('.todo-form')) {
         return; // Do nothing if a form is already displayed
@@ -74,12 +75,13 @@ export const renderToDoForm = (contentDiv) => {
     form.addEventListener('submit', (event) => {
         event.preventDefault(); // Prevent default form submission behavior
 
-        const newToDo = {
-            title: titleInput.value,
-            description: descriptionInput.value,
-            dueDate: dueDateInput.value,
-            priority: prioritySelect.value,
-        };
+        const newToDo = new ToDo(
+            titleInput.value,
+            descriptionInput.value,
+            dueDateInput.value,
+            prioritySelect.value,
+            folderName
+        );
 
         // Retrieve existing to-dos, add the new one, and save them to localStorage
         const toDos = getToDos();
